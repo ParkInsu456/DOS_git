@@ -8,11 +8,19 @@ namespace DOS_B09
 {
     internal class GameManager
     {
-        Village sparta = new Sparta();
+        public static InputMgr inputMgr = new InputMgr();
+        public static PrintMgr printMgr = new PrintMgr();
+        public static Player player = new Warrior();
+        public static Status status = new Status();
+        public static Village village = new Sparta();
+        
+
+       
 
         public void Init()
         {
-            sparta.Print();
+
+            village.Print();
 
 
             

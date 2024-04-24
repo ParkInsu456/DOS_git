@@ -31,6 +31,17 @@ namespace DOS_B09
             }
         }
 
+        public void Status(Player player)
+        {
+            string fmt = "{0,-12}{1,-2}{2, 6}";
+            //string fmt2 = ;
 
+            Console.WriteLine(fmt,"Lv.", ":", player.level);
+            Console.WriteLine(player.name +"   ( "+ player.job+" )");
+            Console.WriteLine(fmt, "공격력", ":", player.fATK);
+            Console.WriteLine(fmt, "방어력", ":", player.fDEF);
+            Console.WriteLine(fmt, "체 력", ":", player.fHP);
+            Console.WriteLine(fmt, "Gold", ":", player.gold);
+        }
     }
 }

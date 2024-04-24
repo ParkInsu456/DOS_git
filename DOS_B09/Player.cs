@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace DOS_B09
 {
-	internal class Character
+	public class Player
 	{
+		public int		idx = 0;
 		public int		level;
 		public string?	name;
 		public string?	job;
@@ -20,10 +21,12 @@ namespace DOS_B09
 		public int		gold;
 	}
 
-	class Warrior : Character
+	public class Warrior : Player
 	{
 		public Warrior()
         {
+			idx = base.idx;
+			base.idx++;
 			level = 1;
 			name = "Chad";
 			job = "전사";
