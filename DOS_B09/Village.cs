@@ -25,6 +25,8 @@ namespace DOS_B09
     {
         PrintMgr printMgr = new PrintMgr();
         InputMgr inputMgr = new InputMgr();
+        Shop shop = new Shop();
+
         public Sparta()
         {
             name = "스파르타 마을";
@@ -62,6 +64,7 @@ namespace DOS_B09
                     break;
                 case 2:
                     //상점
+                    shop.Print();
                     break;
                 case 999:
                     // 돌아가기

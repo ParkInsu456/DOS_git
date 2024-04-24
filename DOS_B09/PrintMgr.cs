@@ -8,6 +8,7 @@ namespace DOS_B09
 {
     class PrintMgr
     {
+
         //public static PrintMgr instance { get; private set; }
 
         string fmt = "{,}";
@@ -28,6 +29,17 @@ namespace DOS_B09
             foreach (var menu in menuList)
             {                
                 Console.WriteLine("{0}. {1}",i++, menu);
+            }
+        }
+
+        public void ShopList(Item[] itemList, string name, float atk, float def, string desc, int price)
+        {
+            int i = 0;
+            foreach (var menu in itemList)
+            {
+                if (!(menu == null))
+                    Console.WriteLine($"{name}  | 공: +{atk} 방: +{def} | {desc}  | {price} G");
+                else break;
             }
         }
 
