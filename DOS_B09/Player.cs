@@ -20,12 +20,16 @@ namespace DOS_B09
 		public float	fHP;
 		public int		gold;
 
-		public virtual void GetInventory() { }
+        public float fATKBuffer;
+        public float fDEFBuffer;
+        public float fHPBuffer;
+
+
     }
 
 	public class Warrior : Player
-	{         
-        public Warrior()
+	{
+		public Warrior()
 		{
 			idx = base.idx;
 			base.idx++;
@@ -33,11 +37,14 @@ namespace DOS_B09
 			name = "Chad";
 			job = "전사";
 			fATK = 10f;
-			fDEF = 5f;
-			fHP = 100f;
-			gold = 1500;			
-		}
-				
+			fDEF = 5f ;
+			fHP = 100f ;
+			gold = 5500;
 
-    }
+		}
+
+		public new float fATKBuffer = 0;
+		public new float fDEFBuffer = 0;
+		public new float fHPBuffer = 0;
+	}
 }

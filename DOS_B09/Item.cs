@@ -17,6 +17,7 @@ namespace DOS_B09
         public string desc;
         public int price;
         public bool isBuy = false;
+        public bool isEquip = false;
         protected bool isOpen = true;
         
 

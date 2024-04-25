@@ -47,18 +47,19 @@ namespace DOS_B09
             
             inputMgr.Buy(low, high);
             if (inputMgr.input == 999) { SwitchScene(inputMgr.input);}
+            if (itemList[inputMgr.input].isBuy == true) Console.WriteLine("이미 구매한 아이템입니다.");
             BuyItem(inputMgr.input);
             
             Console.WriteLine();
             
             Print();
         }
-              
-
+                     
         void BuyItem(int input)
         {
             // 재구매 막기
-            if (itemList[input].isBuy == true) return;
+            if (input == 999 || itemList[input].isBuy == true)
+                return;
             // 골드 체크
             if (player.gold >= itemList[input].price)
             {
@@ -72,15 +73,15 @@ namespace DOS_B09
                 {
                     if (invenList[i] == null)
                     {
-                        invenList[i] = itemList[input];
+                        Item temp = new Item();
+                        temp = itemList[input];
+                        invenList[i] = temp;
                         break;
                     }
                 }
-
                 // isBuy가 true면 gold부분 출력을 구매완료 로 바꾼다.
-                    //PrintMgr에서 바꿈
-
-
+                //PrintMgr에서 바꿈
+                Console.WriteLine("구매를 완료했습니다.");
             }
             else
             {

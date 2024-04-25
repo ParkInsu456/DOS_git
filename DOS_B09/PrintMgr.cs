@@ -35,7 +35,6 @@ namespace DOS_B09
             //        Console.WriteLine($"{itemList[i].name}  | 공: +{itemList[i].atk} 방: +{itemList[i].def} | {itemList[i].desc}  | {itemList[i].price} G");                
             //}
 
-          int i = 0;
           foreach (var menu in itemList)
           {
               if (!(menu == null))
@@ -45,7 +44,6 @@ namespace DOS_B09
         }
         public void BuyList(Item[] itemList)
         { 
-            int i = 0;
             foreach (var menu in itemList)
             {
                 if (!(menu == null))
@@ -61,6 +59,25 @@ namespace DOS_B09
             }
         }
 
+        public void EquipList(Item[] itemList)
+        {
+            int i = 0;
+            foreach (var menu in itemList)
+            {
+                if (!(menu == null))
+                {
+                    if (menu.isEquip)
+                    {
+                        Console.WriteLine($"- {i++} [E]{menu.name}  | 공: +{menu.atk} 방: +{menu.def} | {menu.desc}");
+                    }
+                    else
+                        Console.WriteLine($"- {i++} {menu.name}  | 공: +{menu.atk} 방: +{menu.def} | {menu.desc}");
+                }
+                else break;
+            }
+
+        }
+
 
         public void Status(Player player)
         {
@@ -69,8 +86,13 @@ namespace DOS_B09
 
             Console.WriteLine(fmt,"Lv.", ":", player.level);
             Console.WriteLine(player.name +"   ( "+ player.job+" )");
-            Console.WriteLine(fmt, "공격력", ":", player.fATK);
-            Console.WriteLine(fmt, "방어력", ":", player.fDEF);
+
+            if(player.fATKBuffer >0) { Console.WriteLine($"공격력 : "+ (player.fATK+ player.fATKBuffer) + "  (+"+player.fATKBuffer+")"); }
+            else Console.WriteLine(fmt, "공격력", ":", player.fATK);
+
+            if (player.fDEFBuffer > 0) { Console.WriteLine($"방어력 : " + (player.fDEF+ player.fDEFBuffer) + "  (+" + player.fDEFBuffer + ")"); }
+            else Console.WriteLine(fmt, "방어력", ":", player.fDEF);
+
             Console.WriteLine(fmt, "체 력", ":", player.fHP);
             Console.WriteLine(fmt, "Gold", ":", player.gold);
         }

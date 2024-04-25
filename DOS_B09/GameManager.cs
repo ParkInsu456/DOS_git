@@ -13,6 +13,7 @@ namespace DOS_B09
         public static Item item = new Item();
         public static Player player = new Warrior();
         public static Inventory inventory = new Inventory();
+        public static Inventory equip = new Equip();
         public static Status status = new Status();
         public static Village village = new Sparta();
         //public static Shop Shop = new Shop(); 상점은 마을마다 다를 수 있으니까 마을에서 생성
