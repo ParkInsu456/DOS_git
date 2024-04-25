@@ -16,9 +16,10 @@ namespace DOS_B09
         protected int low;  // 선택제한 low 이상
         protected int high; // 선택제한 low 이하
 
-        public virtual void Print()
-        { }
-        
+        public virtual void Print() { }
+        public virtual void InitShop() { }
+
+
     }
 
     class Sparta : Village
@@ -29,6 +30,8 @@ namespace DOS_B09
 
         public Sparta()
         {
+            
+
             name = "스파르타 마을";
             desc = "스파르타 마을에 오신 여러분 환영합니다.";
             desc2 = "이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.";
@@ -38,8 +41,13 @@ namespace DOS_B09
             
         }
 
-        public override void Print()
+        public override void InitShop()
         {
+            shop.itemList = GameManager.item.arr; //스파르타마을 상점목록 받기
+        }
+        public override void Print()
+        {           
+
             printMgr.MenuName(name);
             printMgr.MenuDesc(desc);
             printMgr.MenuDesc(desc2);

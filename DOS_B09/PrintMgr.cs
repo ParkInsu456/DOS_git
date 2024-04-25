@@ -32,15 +32,21 @@ namespace DOS_B09
             }
         }
 
-        public void ShopList(Item[] itemList, string name, float atk, float def, string desc, int price)
+        public void ShopList(Item[] itemList)
         {
-            int i = 0;
-            foreach (var menu in itemList)
-            {
-                if (!(menu == null))
-                    Console.WriteLine($"{name}  | 공: +{atk} 방: +{def} | {desc}  | {price} G");
-                else break;
-            }
+            //for (int i = 0; i < itemList.Length; ++i)
+            //{
+            //    if (!(itemList[i] == null))
+            //        Console.WriteLine($"{itemList[i].name}  | 공: +{itemList[i].atk} 방: +{itemList[i].def} | {itemList[i].desc}  | {itemList[i].price} G");                
+            //}
+
+          int i = 0;
+          foreach (var menu in itemList)
+          {
+              if (!(menu == null))
+                  Console.WriteLine($"{menu.name}  | 공: +{menu.atk} 방: +{menu.def} | {menu.desc}  | {menu.price} G");
+              else break;
+          }
         }
 
         public void Status(Player player)

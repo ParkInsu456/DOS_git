@@ -24,10 +24,8 @@ namespace DOS_B09
         public void Init()
         {
             item.Init();
-            village.Print();
-
-
-            
+            village.InitShop(); 
+            village.Print();            
         }
     }
 }

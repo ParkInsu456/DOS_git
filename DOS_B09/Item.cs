@@ -22,7 +22,7 @@ namespace DOS_B09
 
         public void Init()
         {
-            arr = new Item[11]; // 11 을 동적으로 하거나 변수로 할당하는법 없을까?
+            arr = new Item[20]; // 11 을 동적으로 하거나 변수로 할당하는법 없을까?
 
             arr[0] = new Item();
             arr[0].id = 0;
