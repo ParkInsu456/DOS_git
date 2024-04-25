@@ -14,7 +14,10 @@ namespace DOS_B09
         InputMgr inputMgr = GameManager.inputMgr;
         Player player = GameManager.player;
         Item item = GameManager.item;
+        public ShopBuy shopBuy;
+        
         public Item[] itemList; // 상품목록. 초기화는 Village클래스에서 실행함.
+
 
         string name = "상점";
         string desc = "필요한 아이템을 얻을 수 있는 상점입니다.";
@@ -34,7 +37,7 @@ namespace DOS_B09
             Console.WriteLine();
             Console.WriteLine("[아이템 목록]");  //스트링 xxx로 저장 및 반복사용 강의에있음. 찾아보기
             // 아이템 목록 출력
-            printMgr.ShopList(itemList);
+            printMgr.ItemList(itemList);
             Console.WriteLine();
 
             Console.WriteLine();
@@ -56,14 +59,11 @@ namespace DOS_B09
                     break;
                 case 1:
                     // 아이템 구매
-
+                    shopBuy.Print();
                     break;
                 default:
                     break;
             }
         }
-
-
-
     }
 }

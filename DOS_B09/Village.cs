@@ -26,7 +26,12 @@ namespace DOS_B09
     {
         PrintMgr printMgr = new PrintMgr();
         InputMgr inputMgr = new InputMgr();
+        Player player = GameManager.player;
+        Inventory inventory = GameManager.inventory;
         Shop shop = new Shop();
+        ShopBuy shopBuy = new ShopBuy();
+
+
 
         public Sparta()
         {
@@ -41,9 +46,12 @@ namespace DOS_B09
             
         }
 
-        public override void InitShop()
+        public override void InitShop() // 기능추가해가면서 가장 헷갈리고 남이보면 가독성 안좋을것같은 부분
         {
             shop.itemList = GameManager.item.arr; //스파르타마을 상점목록 받기
+            shop.shopBuy = shopBuy;
+            shopBuy.shop = shop;
+            shopBuy.itemList = GameManager.item.arr;
         }
         public override void Print()
         {           
@@ -69,6 +77,7 @@ namespace DOS_B09
                     break;
                 case 1:
                     //인벤토리
+                    inventory.Print();
                     break;
                 case 2:
                     //상점

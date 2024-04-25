@@ -11,15 +11,21 @@ namespace DOS_B09
         PrintMgr printMgr = GameManager.printMgr;
         InputMgr inputMgr = GameManager.inputMgr;
         Player player = GameManager.player;
+        public Item[] invenList = new Item[20]; //20칸짜리 가방. 앞으로 늘리려면 다른거로 바꿔야하나?
 
         string name = "인벤토리";
         string desc = "보유 중인 아이템을 관리할 수 있습니다.";        
         
-        //상품목록 
+        //인벤토리 목록 
 
         int low = 0;   //변수화 가능
         int high = 1;
 
+        void test()
+        {
+            
+            
+        }
 
         public void Print()
         {
@@ -29,6 +35,7 @@ namespace DOS_B09
             Console.Write("[아이템 목록]"); Console.WriteLine("  소지금 : "+player.gold);
             Console.WriteLine();
             // 아이템 목록 출력
+            printMgr.ItemList(invenList);
             Console.WriteLine();
 
             Console.WriteLine();

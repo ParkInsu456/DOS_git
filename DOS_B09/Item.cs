@@ -10,19 +10,19 @@ namespace DOS_B09
     {
         public Item[] arr;
 
-        protected int id;
+        public int id;
         public string name;
         public float atk;
         public float def;
         public string desc;
         public int price;
-        protected bool isBuy = false;
+        public bool isBuy = false;
         protected bool isOpen = true;
         
 
         public void Init()
         {
-            arr = new Item[20]; // 11 을 동적으로 하거나 변수로 할당하는법 없을까?
+            arr = new Item[20]; // []안 숫자를 동적으로 하거나 변수로 할당하는법 없을까?
 
             arr[0] = new Item();
             arr[0].id = 0;

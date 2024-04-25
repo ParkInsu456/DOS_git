@@ -19,12 +19,14 @@ namespace DOS_B09
 		public float	fDEF;
 		public float	fHP;
 		public int		gold;
-	}
+
+		public virtual void GetInventory() { }
+    }
 
 	public class Warrior : Player
-	{
-		public Warrior()
-        {
+	{         
+        public Warrior()
+		{
 			idx = base.idx;
 			base.idx++;
 			level = 1;
@@ -33,9 +35,9 @@ namespace DOS_B09
 			fATK = 10f;
 			fDEF = 5f;
 			fHP = 100f;
-			gold = 1500;
+			gold = 1500;			
 		}
-    }
+				
 
-	
+    }
 }

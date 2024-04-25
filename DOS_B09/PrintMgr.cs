@@ -8,11 +8,6 @@ namespace DOS_B09
 {
     class PrintMgr
     {
-
-        //public static PrintMgr instance { get; private set; }
-
-        string fmt = "{,}";
-        
         public void MenuName(string menuName)
         {
             Console.WriteLine(menuName);
@@ -32,7 +27,7 @@ namespace DOS_B09
             }
         }
 
-        public void ShopList(Item[] itemList)
+        public void ItemList(Item[] itemList)
         {
             //for (int i = 0; i < itemList.Length; ++i)
             //{
@@ -48,6 +43,24 @@ namespace DOS_B09
               else break;
           }
         }
+        public void BuyList(Item[] itemList)
+        { 
+            int i = 0;
+            foreach (var menu in itemList)
+            {
+                if (!(menu == null))
+                {
+                    if(menu.isBuy)
+                    {
+                        Console.WriteLine($"- {menu.id} {menu.name}  | 공: +{menu.atk} 방: +{menu.def} | {menu.desc}  | 구매완료");
+                    }
+                    else
+                    Console.WriteLine($"- {menu.id} {menu.name}  | 공: +{menu.atk} 방: +{menu.def} | {menu.desc}  | {menu.price} G");
+                }
+                else break;
+            }
+        }
+
 
         public void Status(Player player)
         {
